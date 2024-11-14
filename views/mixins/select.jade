@@ -1,0 +1,4 @@
+mixin select(label, name)
+    select(class="border-b p-4 text-sm text-gray-500 outline-none", id=name, name=name)
+        option(value='')  Please select a #{label}
+        block

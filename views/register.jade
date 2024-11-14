@@ -1,0 +1,17 @@
+include mixins/input.jade
+include mixins/button.jade
+extends layout
+block content
+    .bg-white.shadow.rounded-lg.p-8.mx-auto(class="w-[560px]")
+        .text-center.font-bold.text-3xl.flex.gap-2.items-center.mb-5.justify-center
+            |Create An Account
+            <i class='bx bxs-user-plus'></i>
+        form.flex.flex-col.gap-5
+            +input("Username", "text", "username")
+            +input("Email Address", "email", "email")
+            +input("Password", "password", "password")
+            .flex.flex-col.gap-2.items-end
+                div Have an Account? 
+                    a.text-blue-600(href='/login') Login here
+                .flex.justify-end
+                    +button("Submit")

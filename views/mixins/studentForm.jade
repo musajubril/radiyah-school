@@ -1,0 +1,16 @@
+include ./input.jade
+include ./select.jade
+mixin studentForm()
+    form.flex.flex-col.gap-5(method='post', action='/add-student')
+        +input("Full Name", "text", "full_name")
+        +input("Date Of Birth", "date", "dob")
+        +select("Gender", "gender")
+            each gender in ["Male", "Female"]
+                option(value=gender)= gender
+        +select("Class", "class")
+            each room in ["JSS1", "JSS2", "JSS3", "SSS1", "SSS2", "SSS3"]
+                option(value=room)= room
+        +input("Mobile Number", "number", "mobile_number")
+        .flex.justify-end
+        button.bg-blue-500.text-white.px-4.py-2.rounded-lg(type='submit', class="hover:bg-blue-700") Add Student
+
